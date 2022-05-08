@@ -3,12 +3,7 @@ package com.ceiba.cliente.modelo.entidad;
 
 
 import lombok.Getter;
-import lombok.Setter;
 
-
-import javax.persistence.*;
-
-import java.util.List;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 
