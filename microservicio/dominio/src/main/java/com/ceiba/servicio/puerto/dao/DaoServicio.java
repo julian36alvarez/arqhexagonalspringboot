@@ -10,4 +10,6 @@ public interface DaoServicio {
      * @return los servicios
      */
     List<DtoServicio> listar();
+
+    List<DtoServicio> listarPorIdServicio(Long idServicio);
 }

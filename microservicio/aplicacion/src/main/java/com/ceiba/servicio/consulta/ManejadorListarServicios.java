@@ -1,5 +1,6 @@
 package com.ceiba.servicio.consulta;
 
+
 import com.ceiba.servicio.modelo.dto.DtoServicio;
 import com.ceiba.servicio.puerto.dao.DaoServicio;
 import org.springframework.stereotype.Component;
@@ -16,4 +17,8 @@ public class ManejadorListarServicios {
     }
 
     public List<DtoServicio> ejecutar(){ return this.daoServicio.listar(); }
+
+    public List<DtoServicio> ejecutarPorIdServicio(Long idServicio){
+        return this.daoServicio.listarPorIdServicio(idServicio);
+    }
 }

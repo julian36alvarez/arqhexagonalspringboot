@@ -16,4 +16,12 @@ public class ManejadorListarMascotas {
     }
 
     public List<DtoMascota> ejecutar(){ return this.daoMascota.listar(); }
+
+    public List<DtoMascota> ejecutarPorIdMascota(Long idMascota){
+        return this.daoMascota.listarPorIdMascota(idMascota);
+    }
+
+    public List<DtoMascota> ejecutarMascotaPorIdCliente(Long idCliente){
+        return this.daoMascota.listarMascotasPorIdCliente(idCliente);
+    }
 }

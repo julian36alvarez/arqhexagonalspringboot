@@ -12,4 +12,6 @@ public interface DaoCliente {
      * @return los clientes
      */
     List<DtoCliente> listar();
+
+    List<DtoCliente> listarPorIdCliente(Long idCliente);
 }

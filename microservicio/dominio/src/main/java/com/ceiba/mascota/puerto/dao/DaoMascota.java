@@ -1,5 +1,6 @@
 package com.ceiba.mascota.puerto.dao;
 
+
 import com.ceiba.mascota.modelo.dto.DtoMascota;
 
 import java.util.List;
@@ -11,4 +12,8 @@ public interface DaoMascota {
      * @return los usuarios
      */
     List<DtoMascota> listar();
+
+    List<DtoMascota> listarPorIdMascota(Long idMascota);
+
+    List<DtoMascota> listarMascotasPorIdCliente(Long idCliente);
 }

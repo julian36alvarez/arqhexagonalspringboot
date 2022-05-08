@@ -16,4 +16,8 @@ public class ManejadorListarClientes {
     }
 
     public List<DtoCliente> ejecutar(){ return this.daoCliente.listar(); }
+
+    public List<DtoCliente> ejecutarPorIdCliente(Long idCliente){
+        return this.daoCliente.listarPorIdCliente(idCliente);
+    }
 }
