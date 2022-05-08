@@ -1,14 +1,23 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.cliente.servicio.ServicioActualizarCliente;
+import com.ceiba.cliente.servicio.ServicioCrearCliente;
+import com.ceiba.cliente.servicio.ServicioEliminarCliente;
+import com.ceiba.mascota.servicio.ServicioActualizarMascota;
+import com.ceiba.mascota.servicio.ServicioCrearMascota;
+import com.ceiba.mascota.servicio.ServicioEliminarMascota;
+import com.ceiba.servicio.servicio.ServicioActualizarServicio;
+import com.ceiba.servicio.servicio.ServicioCrearServicio;
+import com.ceiba.servicio.servicio.ServicioEliminarServicio;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.*;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioCliente;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioServicio;
+import com.ceiba.servicio.puerto.repositorio.RepositorioServicio;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioMascota;
+import com.ceiba.mascota.puerto.repositorio.RepositorioMascota;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -4,8 +4,8 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.mascota.comando.ComandoMascota;
 import com.ceiba.mascota.comando.fabrica.FabricaMascota;
-import com.ceiba.usuario.modelo.entidad.Mascota;
-import com.ceiba.usuario.servicio.ServicioCrearMascota;
+import com.ceiba.mascota.modelo.entidad.Mascota;
+import com.ceiba.mascota.servicio.ServicioCrearMascota;
 import org.springframework.stereotype.Component;
 
 @Component

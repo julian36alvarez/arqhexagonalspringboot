@@ -1,9 +1,7 @@
 package com.ceiba.cliente.controlador;
 
 import com.ceiba.cliente.consulta.ManejadorListarClientes;
-import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
-import com.ceiba.usuario.modelo.dto.DtoCliente;
-import com.ceiba.usuario.modelo.dto.DtoUsuario;
+import com.ceiba.cliente.modelo.dto.DtoCliente;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -4,8 +4,8 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.fabrica.FabricaCliente;
-import com.ceiba.usuario.modelo.entidad.Cliente;
-import com.ceiba.usuario.servicio.ServicioCrearCliente;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import org.springframework.stereotype.Component;
 
 @Component

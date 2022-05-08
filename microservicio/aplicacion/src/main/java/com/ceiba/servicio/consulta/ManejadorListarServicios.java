@@ -1,7 +1,7 @@
 package com.ceiba.servicio.consulta;
 
-import com.ceiba.usuario.modelo.dto.DtoServicio;
-import com.ceiba.usuario.puerto.dao.DaoServicio;
+import com.ceiba.servicio.modelo.dto.DtoServicio;
+import com.ceiba.servicio.puerto.dao.DaoServicio;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,10 +1,9 @@
 package com.ceiba.dominio;
 
 import java.time.DayOfWeek;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

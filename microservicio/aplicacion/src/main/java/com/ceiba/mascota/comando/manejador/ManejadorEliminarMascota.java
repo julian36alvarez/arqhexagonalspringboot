@@ -1,7 +1,7 @@
 package com.ceiba.mascota.comando.manejador;
 
 import com.ceiba.manejador.ManejadorComando;
-import com.ceiba.usuario.servicio.ServicioEliminarMascota;
+import com.ceiba.mascota.servicio.ServicioEliminarMascota;
 import org.springframework.stereotype.Component;
 
 

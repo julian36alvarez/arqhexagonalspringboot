@@ -1,7 +1,7 @@
 package com.ceiba.servicio.comando.fabrica;
 
 import com.ceiba.servicio.comando.ComandoServicio;
-import com.ceiba.usuario.modelo.entidad.Servicio;
+import com.ceiba.servicio.modelo.entidad.Servicio;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,6 @@
 package com.ceiba.cliente.comando;
 
-import com.ceiba.usuario.modelo.dto.DtoMascota;
+import com.ceiba.mascota.modelo.dto.DtoMascota;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

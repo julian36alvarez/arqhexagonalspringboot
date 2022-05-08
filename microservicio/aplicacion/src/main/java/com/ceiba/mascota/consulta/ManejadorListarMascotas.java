@@ -1,9 +1,7 @@
 package com.ceiba.mascota.consulta;
 
-import com.ceiba.usuario.modelo.dto.DtoMascota;
-import com.ceiba.usuario.modelo.dto.DtoServicio;
-import com.ceiba.usuario.puerto.dao.DaoMascota;
-import com.ceiba.usuario.puerto.dao.DaoServicio;
+import com.ceiba.mascota.modelo.dto.DtoMascota;
+import com.ceiba.mascota.puerto.dao.DaoMascota;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

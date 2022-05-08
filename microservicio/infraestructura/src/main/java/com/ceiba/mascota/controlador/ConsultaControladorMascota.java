@@ -1,7 +1,7 @@
 package com.ceiba.mascota.controlador;
 
 import com.ceiba.mascota.consulta.ManejadorListarMascotas;
-import com.ceiba.usuario.modelo.dto.DtoMascota;
+import com.ceiba.mascota.modelo.dto.DtoMascota;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;

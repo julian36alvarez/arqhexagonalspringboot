@@ -2,12 +2,10 @@ package com.ceiba.servicio.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.modelo.entidad.Servicio;
-import com.ceiba.usuario.puerto.repositorio.RepositorioServicio;
+import com.ceiba.servicio.modelo.entidad.Servicio;
+import com.ceiba.servicio.puerto.repositorio.RepositorioServicio;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class RepositorioServicioMysql implements RepositorioServicio {

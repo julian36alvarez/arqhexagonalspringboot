@@ -1,14 +1,10 @@
 package com.ceiba.mascota.comando.manejador;
 
-import com.ceiba.cliente.comando.ComandoCliente;
-import com.ceiba.cliente.comando.fabrica.FabricaCliente;
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.mascota.comando.ComandoMascota;
 import com.ceiba.mascota.comando.fabrica.FabricaMascota;
-import com.ceiba.usuario.modelo.entidad.Cliente;
-import com.ceiba.usuario.modelo.entidad.Mascota;
-import com.ceiba.usuario.servicio.ServicioActualizarCliente;
-import com.ceiba.usuario.servicio.ServicioActualizarMascota;
+import com.ceiba.mascota.modelo.entidad.Mascota;
+import com.ceiba.mascota.servicio.ServicioActualizarMascota;
 import org.springframework.stereotype.Component;
 
 @Component

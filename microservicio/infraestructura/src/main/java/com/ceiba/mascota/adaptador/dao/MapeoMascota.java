@@ -1,7 +1,7 @@
 package com.ceiba.mascota.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoMascota;
+import com.ceiba.mascota.modelo.dto.DtoMascota;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

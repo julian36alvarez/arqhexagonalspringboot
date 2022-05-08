@@ -1,7 +1,7 @@
 package com.ceiba.mascota.comando.fabrica;
 
 import com.ceiba.mascota.comando.ComandoMascota;
-import com.ceiba.usuario.modelo.entidad.Mascota;
+import com.ceiba.mascota.modelo.entidad.Mascota;
 import org.springframework.stereotype.Component;
 
 @Component

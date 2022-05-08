@@ -2,8 +2,8 @@ package com.ceiba.servicio.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.modelo.dto.DtoServicio;
-import com.ceiba.usuario.puerto.dao.DaoServicio;
+import com.ceiba.servicio.modelo.dto.DtoServicio;
+import com.ceiba.servicio.puerto.dao.DaoServicio;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

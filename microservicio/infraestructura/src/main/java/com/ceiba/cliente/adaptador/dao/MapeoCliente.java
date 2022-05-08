@@ -1,14 +1,11 @@
 package com.ceiba.cliente.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoCliente;
-import com.ceiba.usuario.modelo.dto.DtoMascota;
+import com.ceiba.cliente.modelo.dto.DtoCliente;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MapeoCliente implements RowMapper<DtoCliente>, MapperResult {
 

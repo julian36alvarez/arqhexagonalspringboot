@@ -3,8 +3,8 @@ package com.ceiba.cliente.comando.manejador;
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.fabrica.FabricaCliente;
-import com.ceiba.usuario.modelo.entidad.Cliente;
-import com.ceiba.usuario.servicio.ServicioActualizarCliente;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.servicio.ServicioActualizarCliente;
 import org.springframework.stereotype.Component;
 
 @Component
