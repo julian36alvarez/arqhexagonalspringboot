@@ -1,0 +1,1 @@
+insert into mascota (id, nombre, especie, raza, id_cliente) values (:id, :nombre, :especie, :raza, :idCliente)

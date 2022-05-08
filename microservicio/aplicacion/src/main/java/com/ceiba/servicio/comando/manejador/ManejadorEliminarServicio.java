@@ -1,0 +1,21 @@
+package com.ceiba.servicio.comando.manejador;
+
+import com.ceiba.manejador.ManejadorComando;
+import com.ceiba.usuario.servicio.ServicioEliminarServicio;
+import org.springframework.stereotype.Component;
+
+
+@Component
+public class ManejadorEliminarServicio implements ManejadorComando<Long> {
+
+    private final ServicioEliminarServicio servicioEliminarServicio;
+
+    public ManejadorEliminarServicio(ServicioEliminarServicio servicioEliminarServicio) {
+        this.servicioEliminarServicio = servicioEliminarServicio;
+    }
+
+    public void ejecutar(Long idServicio) {
+        this.servicioEliminarServicio.ejecutar(idServicio);
+    }
+
+}
