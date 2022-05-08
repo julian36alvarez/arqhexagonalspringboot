@@ -18,7 +18,7 @@ apply plugin: 'jacoco'
 
 group = 'com.ceiba'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
@@ -34,7 +34,7 @@ dependencies {
 	implementation project.ext.swagger
 	implementation project.ext.apachecommons
 	implementation project.ext.springbootjdbc
-	//runtimeOnly project.ext.db
+	runtimeOnly project.ext.db
 	testImplementation project.ext.flywaytest
 
 	
