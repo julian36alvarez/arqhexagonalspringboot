@@ -28,10 +28,10 @@ public class Mascota {
 
     public Mascota(Long id, String nombre, String especie, String raza, Long idCliente) {
 
-        validarObligatorio(SE_DEBE_INGRESAR_EL_NOMBRE_DE_LA_MASCOTA,nombre);
-        validarObligatorio(SE_DEBE_INGRESAR_LA_ESPECIE,especie);
-        validarObligatorio(SE_DEBE_INGRESAR_LA_RAZA,raza);
-        validarObligatorio(SE_DEBE_INGRESAR_CLIENTE, String.valueOf(idCliente));
+        validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_LA_MASCOTA);
+        validarObligatorio(especie, SE_DEBE_INGRESAR_LA_ESPECIE);
+        validarObligatorio(raza, SE_DEBE_INGRESAR_LA_RAZA);
+        validarObligatorio(idCliente, SE_DEBE_INGRESAR_CLIENTE);
         validarValido(especie,ESPECIES.class, ESPECIE_NO_VALIDA);
         this.id = id;
         this.nombre = nombre;

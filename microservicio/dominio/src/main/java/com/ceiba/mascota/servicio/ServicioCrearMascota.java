@@ -1,6 +1,7 @@
 package com.ceiba.mascota.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.mascota.modelo.entidad.Mascota;
 import com.ceiba.mascota.puerto.repositorio.RepositorioMascota;
 
@@ -17,7 +18,7 @@ public class ServicioCrearMascota {
     private void validarExistenciaPrevia(Mascota mascota) {
         boolean existe = this.repositorioMascota.existe(mascota.getIdCliente());
         if(!existe) {
-            throw new ExcepcionDuplicidad(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);
+            throw new ExcepcionValorInvalido(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);
         }
     }
 

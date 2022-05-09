@@ -2,13 +2,12 @@ package com.ceiba.cliente.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
