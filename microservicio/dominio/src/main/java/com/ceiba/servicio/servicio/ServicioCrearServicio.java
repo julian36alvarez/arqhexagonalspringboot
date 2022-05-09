@@ -53,8 +53,10 @@ public class ServicioCrearServicio {
             fechaProgramada = fechaProgramada.truncatedTo(ChronoUnit.DAYS);
 
             fechaProgramada = fechaProgramada.plusDays(1);
-            if(fechaProgramada.getDayOfWeek() == DayOfWeek.SUNDAY){
+            if(fechaProgramada.getDayOfWeek() == DayOfWeek.SUNDAY ){
                 fechaProgramada = fechaProgramada.plusDays(1);
+            }else if(fechaProgramada.getDayOfWeek() == DayOfWeek.SATURDAY){
+                fechaProgramada = fechaProgramada.plusDays(2);
             }
         }
         return fechaProgramada;
