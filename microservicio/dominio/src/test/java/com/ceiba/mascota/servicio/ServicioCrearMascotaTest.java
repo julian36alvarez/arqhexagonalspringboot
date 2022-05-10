@@ -1,7 +1,6 @@
 package com.ceiba.mascota.servicio;
 
 import com.ceiba.BasePrueba;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.mascota.modelo.entidad.Mascota;
 import com.ceiba.mascota.puerto.repositorio.RepositorioMascota;

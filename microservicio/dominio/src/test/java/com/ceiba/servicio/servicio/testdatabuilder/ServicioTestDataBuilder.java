@@ -3,7 +3,10 @@ package com.ceiba.servicio.servicio.testdatabuilder;
 import com.ceiba.servicio.modelo.entidad.Servicio;
 
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
 
 public class ServicioTestDataBuilder {
 
@@ -15,12 +18,18 @@ public class ServicioTestDataBuilder {
 
     private LocalDateTime fechaProgramada;
 
+    private LocalDateTime fechaEntrega;
+    private LocalDateTime fechaContable;
+    private Double total;
+
     public ServicioTestDataBuilder() {
+        LocalDateTime dateTime = LocalDate.now().atTime(10, 0);
+        LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
         idUsuario = 1l;
         tipoUsuario = 1l;
         tipoServicio = 1l;
         idMascota = 1l;
-        fechaProgramada = LocalDateTime.now().plusDays(1).minusHours(5);;
+        fechaProgramada = fechaServicio;;
     }
 
     public ServicioTestDataBuilder conIdUsuario(Long idUsuario) {
