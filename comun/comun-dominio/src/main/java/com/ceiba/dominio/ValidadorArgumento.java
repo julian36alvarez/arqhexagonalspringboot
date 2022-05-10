@@ -101,7 +101,7 @@ public class ValidadorArgumento {
 
     public static void validarFechaNoDomingos(LocalDateTime fechaProgramada, String laFechaNoPuedeSerUnDomingo){
         DayOfWeek getDate = fechaProgramada.getDayOfWeek();
-        if (getDate == DayOfWeek.SUNDAY) {
+        if (getDate == DayOfWeek.SUNDAY || getDate == DayOfWeek.SATURDAY ) {
             throw new ExcepcionValorInvalido(laFechaNoPuedeSerUnDomingo);
         }
     }
