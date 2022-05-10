@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ClienteTest {
+ class ClienteTest {
 
     @Test
     @DisplayName("Deberia crear correctamente el Cliente")

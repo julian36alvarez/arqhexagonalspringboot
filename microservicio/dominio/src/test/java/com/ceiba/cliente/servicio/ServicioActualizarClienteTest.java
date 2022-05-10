@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class ServicioActualizarClienteTest {
+ class ServicioActualizarClienteTest {
 
     @Test
     @DisplayName("Deberia validar la existencia previa del cliente")

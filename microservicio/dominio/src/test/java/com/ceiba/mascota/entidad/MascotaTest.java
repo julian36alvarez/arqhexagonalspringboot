@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MascotaTest {
+ class MascotaTest {
 
     @Test
     @DisplayName("Deberia crear correctamente la mascota")

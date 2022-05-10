@@ -16,7 +16,7 @@ public class Servicio {
     private static final String SE_DEBE_INGRESAR_TIPO_SERVICIO = "Se debe ingresar el tipo servicio";
     private static final String SE_DEBE_ID_MASCOTA = "Se debe id de la mascota";
     private static final String SE_DEBE_INGRESAR_LA_FECHA_PROGRAMADA = "Se debe ingresar la fecha Programada";
-    private static final String LA_FECHA_NO_PUEDE_SER_UN_DOMINGO = "Se debe programar la cita en un dia habil L-S";
+    private static final String LA_FECHA_NO_PUEDE_SER_UN_DOMINGO = "Se debe programar la cita en un dia habil L-V";
     private static final String LA_FECHA_NO_PUEDE_SER_ANTES = "Fecha no valida";
     private static final String LA_HORA_NO_PUEDE_SER_MAYOR_A_LAS_4PM = "Hora no valida";
 
@@ -44,6 +44,7 @@ public class Servicio {
         validarObligatorio(idMascota, SE_DEBE_ID_MASCOTA);
         validarObligatorio(fechaProgramada, SE_DEBE_INGRESAR_LA_FECHA_PROGRAMADA);
         validarFechaNoDomingos(fechaProgramada, LA_FECHA_NO_PUEDE_SER_UN_DOMINGO);
+        validarHoraNoMayor(fechaProgramada, LA_HORA_NO_PUEDE_SER_MAYOR_A_LAS_4PM);
         validarFechaNoMenorHoy(fechaProgramada, LA_FECHA_NO_PUEDE_SER_ANTES);
         validarTipoServicio(tipoServicio, SE_DEBE_INGRESAR_TIPO_SERVICIO_CORRECTO);
         validarTipoCliente(tipoUsuario, SE_DEBE_INGRESAR_TIPO_USUARIO_CORRECTO);
