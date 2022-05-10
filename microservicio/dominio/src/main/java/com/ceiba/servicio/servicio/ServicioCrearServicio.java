@@ -1,6 +1,7 @@
 package com.ceiba.servicio.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.servicio.modelo.entidad.Servicio;
 import com.ceiba.servicio.puerto.repositorio.RepositorioServicio;
 
@@ -88,7 +89,7 @@ public class ServicioCrearServicio {
     private void validarExistenciaCliente(Servicio servicio) {
         boolean existe = this.repositorioServicio.existePorIdCliente(servicio.getIdUsuario());
         if(!existe) {
-            throw new ExcepcionDuplicidad(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);
+            throw new ExcepcionValorInvalido(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);
         }
     }
 
