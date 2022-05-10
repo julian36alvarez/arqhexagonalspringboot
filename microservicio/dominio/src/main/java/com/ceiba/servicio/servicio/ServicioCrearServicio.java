@@ -126,7 +126,7 @@ public class ServicioCrearServicio {
         festivosColombia.add((LocalDate.of(2022,12,25)));
 
         if ( festivosColombia.contains(diaProgramado)) {
-            esFestivo  =0.09;
+            esFestivo  =1;
         }
         return esFestivo;
     }

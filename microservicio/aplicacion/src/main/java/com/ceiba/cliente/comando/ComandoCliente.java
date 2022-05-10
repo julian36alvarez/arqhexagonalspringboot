@@ -20,6 +20,6 @@ public class ComandoCliente {
     private String nombre;
     private String direccion;
     private Long telefono;
-    private List<DtoMascota> mascotas;
+
 
 }

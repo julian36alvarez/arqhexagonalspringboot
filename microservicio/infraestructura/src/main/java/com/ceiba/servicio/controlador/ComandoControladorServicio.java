@@ -5,11 +5,15 @@ import com.ceiba.servicio.comando.ComandoServicio;
 import com.ceiba.servicio.comando.manejador.ManejadorActualizarServicio;
 import com.ceiba.servicio.comando.manejador.ManejadorCrearServicio;
 import com.ceiba.servicio.comando.manejador.ManejadorEliminarServicio;
+import com.ceiba.servicio.consulta.ManejadorListarServicios;
+import com.ceiba.servicio.modelo.dto.DtoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/servicios")
@@ -20,19 +24,23 @@ public class ComandoControladorServicio {
 	private final ManejadorEliminarServicio manejadorEliminarServicio;
 	private final ManejadorActualizarServicio manejadorActualizarServicio;
 
+	private final ManejadorListarServicios manejadorListarServicios;
+
     @Autowired
     public ComandoControladorServicio(ManejadorCrearServicio manejadorCrearServicio,
-                                      ManejadorEliminarServicio manejadorEliminarServicio,
-                                      ManejadorActualizarServicio manejadorActualizarServicio) {
+									  ManejadorEliminarServicio manejadorEliminarServicio,
+									  ManejadorActualizarServicio manejadorActualizarServicio, ManejadorListarServicios manejadorListarServicios) {
         this.manejadorCrearServicio = manejadorCrearServicio;
 		this.manejadorEliminarServicio = manejadorEliminarServicio;
 		this.manejadorActualizarServicio = manejadorActualizarServicio;
-    }
+		this.manejadorListarServicios = manejadorListarServicios;
+	}
 
     @PostMapping
     @ApiOperation("Crear servicio")
-    public ComandoRespuesta<Long> crear(@RequestBody ComandoServicio comandoServicio) {
-        return manejadorCrearServicio.ejecutar(comandoServicio);
+    public List<DtoServicio> crear(@RequestBody ComandoServicio comandoServicio) {
+		ComandoRespuesta<Long> id = manejadorCrearServicio.ejecutar(comandoServicio);
+		return this.manejadorListarServicios.ejecutarPorIdServicio(id.getValor());
     }
 
     @DeleteMapping(value="/{id}")

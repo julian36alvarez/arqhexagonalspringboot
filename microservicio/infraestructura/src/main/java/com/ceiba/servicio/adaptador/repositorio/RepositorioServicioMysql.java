@@ -24,10 +24,10 @@ public class RepositorioServicioMysql implements RepositorioServicio {
     @SqlStatement(namespace="servicio", value="existePorId")
     private static String sqlExistePorId;
 
-    @SqlStatement(namespace="cliente", value="existePorId")
+    @SqlStatement(namespace="servicio", value="existePorIdCliente")
     private static String sqlExistePorIdCliente;
 
-    @SqlStatement(namespace="mascota", value="existePorId")
+    @SqlStatement(namespace="servicio", value="existePorIdMascota")
     private static String sqlExistePorIdMascota;
 
     public RepositorioServicioMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -62,14 +62,14 @@ public class RepositorioServicioMysql implements RepositorioServicio {
     @Override
     public boolean existePorIdCliente(Long idCliente) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", idCliente);
+        paramSource.addValue("idCliente", idCliente);
         return Boolean.TRUE.equals(this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorIdCliente, paramSource, Boolean.class));
     }
 
     @Override
     public boolean existePorIdMascota(Long idMascota) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", idMascota);
+        paramSource.addValue("idMascota", idMascota);
         return Boolean.TRUE.equals(this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorIdMascota, paramSource, Boolean.class));
     }
 

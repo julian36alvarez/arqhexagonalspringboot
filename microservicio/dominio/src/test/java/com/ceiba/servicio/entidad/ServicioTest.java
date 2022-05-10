@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         Servicio servicio = new ServicioTestDataBuilder().conFechaProgramada(fechaServicio).conId(1L).build();
         //assert
         assertEquals(1, servicio.getId());
-        assertEquals(1, servicio.getIdUsuario());
+        assertEquals(36, servicio.getIdUsuario());
         assertEquals(1, servicio.getTipoUsuario());
         assertEquals(1, servicio.getTipoServicio());
 

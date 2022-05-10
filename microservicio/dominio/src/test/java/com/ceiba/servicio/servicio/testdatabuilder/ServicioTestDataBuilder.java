@@ -18,14 +18,12 @@ public class ServicioTestDataBuilder {
 
     private LocalDateTime fechaProgramada;
 
-    private LocalDateTime fechaEntrega;
-    private LocalDateTime fechaContable;
-    private Double total;
+
 
     public ServicioTestDataBuilder() {
         LocalDateTime dateTime = LocalDate.now().atTime(10, 0);
         LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
-        idUsuario = 1l;
+        idUsuario = 36l;
         tipoUsuario = 1l;
         tipoServicio = 1l;
         idMascota = 1l;
