@@ -26,4 +26,17 @@ class ServicioCrearServicioTest {
         BasePrueba.assertThrows(() -> servicioCrearServicio.ejecutar(servicio), ExcepcionValorInvalido.class,"El cliente no existe, ingresar como cliente generico id = 2");
     }
 
+    @Test
+    @DisplayName("Deberia crear correctamente en el repositorio")
+    void deberiaCrearCorrectamenteEnElRepositorioClienteInvitado() {
+        // arrange
+        Servicio servicio = new ServicioTestDataBuilder().conId(1L).conTipoUsuario(2l).build();
+        RepositorioServicio repositorioServicio = Mockito.mock(RepositorioServicio.class);
+        ServicioCrearServicio servicioCrearServicio = new ServicioCrearServicio(repositorioServicio);
+        // act
+        servicioCrearServicio.ejecutar(servicio);
+        //assert
+        Mockito.verify(repositorioServicio,Mockito.times(1)).crear(servicio);
+    }
+
 }
