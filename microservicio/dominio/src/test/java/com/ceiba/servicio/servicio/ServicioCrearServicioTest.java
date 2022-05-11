@@ -2,10 +2,6 @@ package com.ceiba.servicio.servicio;
 
 import com.ceiba.BasePrueba;
 
-import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
-import com.ceiba.cliente.servicio.ServicioCrearCliente;
-import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
 import com.ceiba.servicio.modelo.entidad.Servicio;
