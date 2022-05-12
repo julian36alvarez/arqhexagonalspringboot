@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,10 +22,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
     @DisplayName("Deberia crear correctamente el servicio")
     void deberiaCrearCorrectamenteElServicio() {
         // arrange
-
         LocalDateTime dateTime = LocalDate.now().atTime(10, 0);
         LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
-
+        LocalDateTime fechaEntrega = fechaServicio.plusHours(2);
         //act
         Servicio servicio = new ServicioTestDataBuilder().conFechaProgramada(fechaServicio).conId(1L).build();
         //assert
@@ -32,8 +32,69 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertEquals(36, servicio.getIdUsuario());
         assertEquals(1, servicio.getTipoUsuario());
         assertEquals(1, servicio.getTipoServicio());
-
+        assertEquals(fechaEntrega, servicio.getFechaEntrega());
+        assertEquals(fechaServicio, servicio.getFechaContable());
+        assertEquals(45500.0, servicio.getTotal());
     }
+
+     @Test
+     @DisplayName("Deberia crear correctamente el servicio tipo 2")
+     void deberiaCrearCorrectamenteElServicioTipoDos() {
+         // arrange
+         LocalDateTime dateTime = LocalDate.now().atTime(10, 0);
+         LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
+         LocalDateTime fechaEntrega = fechaServicio.plusHours(2);
+         //act
+         Servicio servicio = new ServicioTestDataBuilder().conFechaProgramada(fechaServicio).conTipoServicio(2l).conId(1L).build();
+         //assert
+         assertEquals(1, servicio.getId());
+         assertEquals(36, servicio.getIdUsuario());
+         assertEquals(1, servicio.getTipoUsuario());
+         assertEquals(2, servicio.getTipoServicio());
+         assertEquals(fechaEntrega, servicio.getFechaEntrega());
+         assertEquals(fechaServicio, servicio.getFechaContable());
+         assertEquals(40950.0, servicio.getTotal());
+     }
+
+     @Test
+     @DisplayName("Deberia crear correctamente el servicio tipo 3")
+     void deberiaCrearCorrectamenteElServicioTipoTres() {
+         // arrange
+         LocalDateTime dateTime = LocalDate.now().atTime(10, 0);
+         LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
+         LocalDateTime fechaEntrega = fechaServicio.plusHours(2);
+         //act
+         Servicio servicio = new ServicioTestDataBuilder().conFechaProgramada(fechaServicio).conTipoServicio(3l).conId(1L).build();
+         //assert
+         assertEquals(1, servicio.getId());
+         assertEquals(36, servicio.getIdUsuario());
+         assertEquals(1, servicio.getTipoUsuario());
+         assertEquals(3, servicio.getTipoServicio());
+         assertEquals(fechaEntrega, servicio.getFechaEntrega());
+         assertEquals(fechaServicio, servicio.getFechaContable());
+         assertEquals(36400.0, servicio.getTotal());
+     }
+
+     @Test
+     @DisplayName("Deberia crear correctamente el servicio un viernes despues de las tres - validar fecha contable")
+     void deberiaCrearCorrectamenteElServicioFechaContableUnViernesDespuesDeLasTres() {
+         // arrange
+         LocalDateTime dateTime = LocalDate.now().atTime(15, 30);
+         LocalDateTime fechaServicio = dateTime.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
+         LocalDateTime fechaEntrega = fechaServicio.plusHours(2);
+
+         LocalDateTime fechaContable = fechaServicio.truncatedTo(ChronoUnit.DAYS).plusDays(2);
+         //act
+         Servicio servicio = new ServicioTestDataBuilder().conFechaProgramada(fechaServicio).conTipoServicio(3l).conId(1L).build();
+         //assert
+         assertEquals(1, servicio.getId());
+         assertEquals(36, servicio.getIdUsuario());
+         assertEquals(1, servicio.getTipoUsuario());
+         assertEquals(3, servicio.getTipoServicio());
+         assertEquals(fechaEntrega, servicio.getFechaEntrega());
+         assertEquals(fechaContable, servicio.getFechaContable());
+         assertEquals(36400.0, servicio.getTotal());
+     }
 
     @Test
     void deberiaFallarSinIdCliente() {
