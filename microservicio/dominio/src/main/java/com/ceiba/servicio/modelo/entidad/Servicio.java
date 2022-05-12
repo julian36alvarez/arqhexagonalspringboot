@@ -69,7 +69,7 @@ public class Servicio {
 
     private Double calcularTotalAPagar(Long tipoUsuario, Long tipoServicio, LocalDateTime fechaProgramada) {
         double descuento;
-        double total = 0d;
+        total = 0d;
         double esFestivo =  validarSiEsFestivos(fechaProgramada);
         if(tipoUsuario== 1l){
             descuento = DESCUENTO_CLIENTE;
