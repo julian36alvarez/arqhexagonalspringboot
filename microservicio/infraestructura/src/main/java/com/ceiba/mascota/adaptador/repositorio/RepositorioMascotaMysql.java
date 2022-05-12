@@ -13,19 +13,19 @@ public class RepositorioMascotaMysql implements RepositorioMascota {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace="mascota", value="crear")
-    private static String sqlCrear;
+    private static String sqlCrearMascota;
 
     @SqlStatement(namespace="mascota", value="actualizar")
-    private static String sqlActualizar;
+    private static String sqlActualizarMascota;
 
     @SqlStatement(namespace="mascota", value="eliminar")
-    private static String sqlEliminar;
+    private static String sqlEliminarMascota;
 
     @SqlStatement(namespace="mascota", value="existePorId")
-    private static String sqlExistePorId;
+    private static String sqlExisteMascotaPorId;
 
     @SqlStatement(namespace="cliente", value="existePorId")
-    private static String sqlExiste;
+    private static String sqlExisteClientesParaMascota;
 
     public RepositorioMascotaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -33,7 +33,7 @@ public class RepositorioMascotaMysql implements RepositorioMascota {
 
     @Override
     public Long crear(Mascota mascota) {
-        return this.customNamedParameterJdbcTemplate.crear(mascota, sqlCrear);
+        return this.customNamedParameterJdbcTemplate.crear(mascota, sqlCrearMascota);
     }
 
     @Override
@@ -41,13 +41,13 @@ public class RepositorioMascotaMysql implements RepositorioMascota {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
 
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminarMascota, paramSource);
     }
 
 
     @Override
     public void actualizar(Mascota mascota) {
-        this.customNamedParameterJdbcTemplate.actualizar(mascota, sqlActualizar);
+        this.customNamedParameterJdbcTemplate.actualizar(mascota, sqlActualizarMascota);
     }
 
     @Override
@@ -55,13 +55,13 @@ public class RepositorioMascotaMysql implements RepositorioMascota {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
 
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteMascotaPorId,paramSource, Boolean.class);
     }
 
     @Override
     public boolean existe(Long idCliente) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", idCliente);
-        return Boolean.TRUE.equals(this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class));
+        return Boolean.TRUE.equals(this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteClientesParaMascota, paramSource, Boolean.class));
     }
 }
