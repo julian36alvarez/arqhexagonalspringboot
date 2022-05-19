@@ -29,16 +29,16 @@ class ConsultaControladorServicioTest {
     private MockMvc mocMvc;
 
     @Test
-    @DisplayName("Deberia listar usuarios")
+    @DisplayName("Deberia listar los servicios")
     void deberiaListarUsuarios() throws Exception {
         // arrange
         // act - assert
-        mocMvc.perform(get("/usuarios")
+        mocMvc.perform(get("/servicios")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nombre", is("test")))
-                .andExpect(jsonPath("$[0].id", is(1)));
+                .andExpect(jsonPath("$[0].id", is(1)))
+                .andExpect(jsonPath("$[0].idUsuario", is(23)));
 
     }
 

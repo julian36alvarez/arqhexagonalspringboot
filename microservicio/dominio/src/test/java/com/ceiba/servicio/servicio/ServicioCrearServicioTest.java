@@ -61,10 +61,11 @@ class ServicioCrearServicioTest {
         RepositorioServicio repositorioServicio = Mockito.mock(RepositorioServicio.class);
         ServicioCrearServicio servicioCrearServicio = new ServicioCrearServicio(repositorioServicio);
         servicioCrearServicio.ejecutar(servicio);
+        assertEquals(1, servicio.getId());
         assertEquals(fechaServicio.plusHours(2), servicio.getFechaEntrega());
         assertEquals(fechaServicio, servicio.getFechaContable());
         assertEquals(100000d,servicio.getTotal());
-
+        Mockito.verify(repositorioServicio,Mockito.times(1)).crear(servicio);
     }
 
 }
